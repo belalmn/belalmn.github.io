@@ -1,50 +1,52 @@
-body
-{   
-  font-family: 'Open Sans', sans-serif;
-  font-size: 13pt;
-  color: #404040;
+/* General Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13pt;
+    color: #404040;
+    scroll-behavior: smooth;
 }
 
-body a
-{
+body a {
     color: #000000;
     text-decoration: underline;
 }
 
-body a:hover
-{
+body a:hover {
     color: #808080;
-    text-decoration: underline;
 }
 
-.splash b
-{
+/* Splash Section Styling */
+.splash {
+    line-height: 20pt;
+}
+
+.splash b {
     font-weight: 600;
     color: #2b2b2b;
 }
 
-.experience-title
-{
+/* Text Styling */
+.bold_text {
+    font-weight: bold;
+}
+
+.emph {
+    color: #c02020;
+}
+
+.emphblack {
+    color: #000000;
     font-weight: 700;
-    margin-bottom: 12px;
-    font-size: 14pt;
 }
 
-.experience-paragraph
-{
-    font-size: 13pt;
-    padding-bottom: 12px;
-}
-
-.content_container
-{
+/* Content Layout */
+.content_container {
     width: 800px;
-    margin-left: auto;
-    margin-right: auto;   
+    margin: 0 auto; /* Center content */
 }
 
-.title_text
-{
+/* Title and Subtitle Styling */
+.title_text {
     font-family: 'Faustina', sans-serif;
     font-weight: 700;
     font-size: 36pt;
@@ -52,8 +54,7 @@ body a:hover
     color: #000000;
 }
 
-.subtitle_text
-{
+.subtitle_text {
     padding-top: 35px;
     padding-bottom: 10px;
     font-family: 'Faustina', sans-serif;
@@ -62,26 +63,19 @@ body a:hover
     color: #000000;
 }
 
-.bold_text {
-    font-weight: bold;
-}
-   
-.emph
-{
-  color: #c02020;
+/* Experience Section */
+.experience-title {
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 14pt;
 }
 
-.emphblack
-{
-  color: #000000;
-  font-weight: 700;
+.experience-paragraph {
+    font-size: 13pt;
+    padding-bottom: 12px;
 }
 
-.splash
-{
-  line-height: 20pt;
-}
-
+/* Project Section */
 .project-title {
     font-size: 14pt;
     display: flex;
@@ -95,6 +89,7 @@ body a:hover
     color: #404040;
 }
 
+/* Coursework Section */
 .coursework {
     font-size: 13pt;
     line-height: 1.6;
@@ -105,6 +100,7 @@ body a:hover
     color: #404040;
 }
 
+/* Footer */
 .footer {
     text-align: center;
     font-size: 11pt;
@@ -122,43 +118,37 @@ body a:hover
     text-decoration: underline;
 }
 
-.navbar {
-    text-align: center;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #ddd;
-    font-size: 14pt;
-}
-
-.navbar a {
-    text-decoration: none;
-    margin: 0 15px;
-    color: #333;
-}
-
-.navbar a:hover {
-    color: #0073e6;
-}
-
-.scrollspy {
+/* Scroll Spy Styling */
+.scroll-spy {
     position: fixed;
-    top: 100px; /* Adjust this to fit your page layout */
-    right: 20px; /* Position on the left; use 'right' for right side */
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 14px;
+    top: 150px; /* Adjust as needed */
+    left: calc(50% + 450px); /* Align relative to content width (800px content + padding) */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between links */
+    font-size: 13pt;
+    color: #404040;
+    z-index: 1000;
 }
 
-.scrollspy a {
-    display: block;
-    margin-bottom: 8px;
+.scroll-spy a {
     text-decoration: none;
-    color: #303030;
-    transition: color 0.3s ease-in-out;
+    color: inherit; /* Matches the text color */
+    font-weight: normal;
+    transition: font-weight 0.2s ease;
 }
 
-.scrollspy a.active {
+.scroll-spy a:hover {
     font-weight: bold;
+    cursor: pointer;
+}
+
+.scroll-spy a.active {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .scroll-spy {
+        display: none; /* Hide scroll spy on smaller screens */
+    }
 }
