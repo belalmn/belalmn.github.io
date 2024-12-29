@@ -1,0 +1,302 @@
+<html>
+
+<head>
+    <title>Belal Mohammed-Nur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("div[id]");
+            const navLinks = document.querySelectorAll(".scrollspy a");
+    
+            window.addEventListener("scroll", () => {
+                let current = "";
+    
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 100; // Adjust for offset
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute("id");
+                    }
+                });
+    
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href").includes(current)) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>    
+
+</head>
+
+<body>
+
+    <div class="scrollspy">
+        <a href="#about">About</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching Assistance</a>
+        <a href="#coursework">Coursework</a>
+    </div>    
+    
+    <div class="main_container">
+        <div class="content_container">
+
+            <div style="padding-top: 50px">
+                <img style="float:right; border: #404040 1px solid" src="images/belalm_photo.jpg" width="315"
+                    height="207" alt="Belal's photo" />
+                <div class="title_text">
+                    <div>Belal</div>
+                    <div>Mohammed-Nur</div>
+                </div>
+                <div class="minor_text" style="padding-top: 10px;">
+                    <div>Info. Systems '24 @ Carnegie Mellon University</div>
+                    <div>Computer Science @ University of British Columbia</div>
+                    <div class="minor_text">Based in Vancouver, Canada</div>
+                    <div><img src="images/belal_address.png" width="183" height="20" style="padding: 5px 0px 2px 0px;"
+                            alt="Contact Info" /></div>
+                    <div style="padding-top: 6px;">
+                        <a href="https://x.com/belalmn_"><img src="images/x_icon.png" width="28" height="28" /></a>
+                        <a href="https://www.linkedin.com/in/belalm"><img src="images/linkedin_icon.png" width="28"
+                                height="28" /></a>
+                    </div>
+                </div>
+            </div>
+            
+
+
+            <div style="clear:both;"></div>
+
+            <div style="padding-top: 25px;" class="splash">
+
+                <div id="about">
+                    <div style="padding: 5px 0px 5px 0px">
+                        Hi, I'm Belal! I'm a recent graduate from Carnegie Mellon University, where I studied <b>
+                            Information
+                            Systems
+                        </b> and concentrated in Data Science. I'm currently pursuing a second degree in <b>Computer
+                            Science</b>
+                        at the University of British Columbia to deepen my experience and knowledge in the field, and am
+                        looking
+                        forward to engaging in research and learning with a focus on <b>Deep Learning</b> and <b>Computer
+                            Vision</b>.
+                        I've grown interested in the topics of Structure-from-Motion, 3D Reconstruction, and Generative
+                        Models.
+                    </div>
+                    <div style="padding: 20px 0px 0px 0px;">
+                        I've been exploring the core components in Deep Learning by implementing a variety of models from
+                        scratch.
+                        Inspired by my CMU 11-485 Intro to Deep Learning class projects, I've been working on and
+                        expanding development of <a href="https://github.com/belalmn/JTorch">MyTorch</a>, a minimalist deep
+                        learning
+                        library, to better understand the inner workings of neural network architectures.
+                        I've recently recreated parts of it entirely in Java for a Software Engineering class project, and
+                        paired
+                        it with a front end that allows you to create and train your own neural networks via a GUI. It's
+                        aptly called
+                        <a href="https://github.com/belalmn/JTorch">JTorch</a>, check it out!
+                    </div>
+                    <div style="padding: 20px 0px 0px 0px;">
+                        I'm currently exploring <b>Neural Radiance Fields</b> and <b>Gaussian Splatting</b>, and am working
+                        on a project
+                        that
+                        involves implementing a 3D reconstruction pipeline with from scratch. I'll be writing about my
+                        experiences and findings on my blog, excited to see where it goes!
+                    </div>
+                    <div style="padding: 20px 0px 0px 0px;">
+                        I'm always looking for opportunities to learn and grow, and am actively working towards engaging in
+                        research and projects that challenge me and push me to think critically and creatively.
+                        I'm vocal about my experiences and thoughts on research, the tech industry, and our society, and am
+                        always open to discussing and sharing my thoughts on a variety of topics. Feel free to reach
+                        out to me if you'd like to chat!
+                    </div>
+                </div>
+
+                <div id="experiences">
+                    <div class="subtitle_text">Experiences</div>
+                    <div style="padding-top: 20px;">
+                        <div class="experience-title"><b>Data Science Intern</b> @ <b>Qatar Islamic Bank</b> (Summer 2024)
+                        </div>
+                        <div class="experience-paragraph">
+                            During my internship at Qatar Islamic Bank's Data Science Division, I developed an <b>ETL
+                                pipeline</b> to parse and analyze emails stored in <code>.pst</code> files.
+                            This pipeline extracted, transformed, and structured email data to provide actionable insights
+                            for the bank's operations department.
+                        </div>
+                        <div class="experience-paragraph">
+                            One of the key focuses of this project was to explore the integration of <b>modern AI
+                                techniques</b> for handling unstructured data.
+                            I utilized Open Source <b>Large Language Models (LLMs)</b>, including Llama3.1, Phi3-Mini,
+                            alongside
+                            traditional methods to classify emails, extract key features, and identify patterns relevant to
+                            business operations.
+                        </div>
+                        <div class="experience-paragraph">
+                            Additionally, I conducted in-depth evaluations to compare the effectiveness of LLM-based methods
+                            versus conventional techniques. I wrote and presented various technical documents with key
+                            indicators
+                            for why certian models or approaches worked for the business needs, and providing insights into
+                            the
+                            practical adoption of modern LLM based tools in this financial institution.
+                        </div>
+                        <div class="experience-paragraph">
+                            This internship allowed me to apply advanced data science and machine learning concepts in a
+                            real-world setting, strengthening my expertise in <b>ETL processes</b>,
+                            <b>data analysis</b>, and leveraging AI for enterprise solutions. You can find more details on
+                            the project <a href="https://github.com/belalmn/qib_email_analysis">here</a>.
+                        </div>
+                    </div>
+                    <div style="padding-top: 20px;">
+                        <div class="experience-title"><b>Software Engineering Intern</b> @ <b>Qatar Science & Technology
+                                Park</b> (Summer 2024)</div>
+                        <div class="experience-paragraph">I interned at Qatar Science & Technology Park, a startup hub, and
+                            worked directly with
+                            <a href="https://www.gptbots.ai/">GPTBots</a>, a no-code platform that allows enterprise clients
+                            to configure their own agentic AI "bots" to serve a variety of purposes, ranging from customer
+                            support
+                            to SEO Writing to more active roles, such as LLM driven Data Analysis.
+                        </div>
+                        <div class="experience-paragraph">My task during this internship was to explore Multi-Agent based
+                            systems, particularly Microsoft Autogen,
+                            as a way to strengthen the quality of the bots and improve the user experience.</div>
+                        <div class="experience-paragraph">I developed a proof of concept using Microsoft Autogen and
+                            LangChain, by creating an SEO Writing bot that
+                            could generate content for a variety of topics. This involved creating a pipeline of multiple
+                            agents with
+                            their own specifications and configurations, and integrating them into a single system that
+                            could generate
+                            content based on user input. I also worked on improving the quality of LLM output through prompt
+                            engineering,
+                            using techniques like Chain-of-Thought and Few-Shot Prompting.</div>
+                        <div class="experience-paragraph">Overall my exploration of Multi-Agent systems and my feedback on
+                            the capabilities of Autogen and LangChain
+                            has helped pivot the direction of the company towards a more robust and user-friendly platform.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="projects">
+                    <div class="subtitle_text" style="padding-top: 50px;">Projects</div>
+                    <div style="padding-top: 20px;">
+                        <div class="project-title">
+                            <b>QIB Email Analysis</b>
+                            <a href="https://github.com/belalmn/qib_email_analysis" target="_blank"
+                                style="text-decoration: none;">
+                                <img src="images/arrow-up-right-box.svg" alt="View Project" width="16" height="16"
+                                    style="margin-left: 8px;">
+                            </a>
+                        </div>
+                        <div class="project-paragraph">
+                            Developed an <b>ETL pipeline</b> to process unstructured email data for Qatar Islamic Bank.
+                            Utilized <b>Large Language Models (LLMs)</b> and traditional data analysis methods to extract
+                            insights.
+                        </div>
+                    </div>
+                    <div style="padding-top: 20px;">
+                        <div class="project-title">
+                            <b>MyTorch</b>
+                            <a href="https://github.com/belalmn/MyTorch" target="_blank" style="text-decoration: none;">
+                                <img src="images/arrow-up-right-box.svg" alt="View Project" width="16" height="16"
+                                    style="margin-left: 8px;">
+                            </a>
+                        </div>
+                        <div class="project-paragraph">
+                            A minimalist deep learning library built from scratch in Python to understand the core concepts
+                            of <b>neural networks</b>. Includes implementations of key layers, optimizers, and activation
+                            functions.
+                        </div>
+                    </div>
+                    <div style="padding-top: 20px;">
+                        <div class="project-title">
+                            <b>JTorch</b>
+                            <a href="https://github.com/belalmn/JTorch" target="_blank" style="text-decoration: none;">
+                                <img src="images/arrow-up-right-box.svg" alt="View Project" width="16" height="16"
+                                    style="margin-left: 8px;">
+                            </a>
+                        </div>
+                        <div class="project-paragraph">
+                            A Java-based reimplementation of MyTorch, paired with a GUI for building and training neural
+                            networks interactively. Developed as part of a Software Engineering course project.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="teaching">
+                    <div class="subtitle_text">Teaching Assistance</div>
+                    <p>
+                        I've been a Teaching/Course Assistant for the following courses at Carnegie Mellon University:
+                    <ul>
+                        <li>
+                            <b>67-272</b>: Application Design and Development (Spring 2024)
+                        </li>
+                        <li>
+                            <b>67-364</b>: Practical Data Science (Fall 2023)
+                        </li>
+                        <li>
+                            <b>15-110</b>: Principles of Computing (Fall 2021, Fall 2023)
+                        </li>
+                        <li>
+                            <b>67-250</b>: Information Systems Millieux (Spring 2022)
+                        </li>
+                        <li>
+                            <b>15-112</b>: Fundamentals of Programming and Computer Science (Spring 2022)
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div id="coursework">
+                    <div class="subtitle_text">Notable Coursework</div>
+                    <p>
+                    <div class="experience-title">Carnegie Mellon University:</div>
+                    <ul class="coursework">
+                        <li><b>11-485: Introduction to Deep Learning</b> <b>(A+)</b> - Covered foundational concepts of deep
+                            learning, including backpropagation, optimization techniques, and modern architectures like CNNs
+                            and RNNs.</li>
+                        <li><b>15-121: Introduction to Data Structures</b> - Explored data structures, algorithms, and
+                            their applications in software development.</li>
+                        <li><b>15-112: Fundamentals of Programming and Computer Science</b> - Focused on problem-solving
+                            using Python, algorithmic thinking, and computational techniques.</li>
+                        <li><b>67-250: Information Systems Milieux</b> - Examined the role of information systems in
+                            organizations and society.</li>
+                        <li><b>67-364: Practical Data Science</b> <b>(A+)</b> - Applied data science techniques, including
+                            data
+                            cleaning, visualization, and predictive modeling using Python.</li>
+                        <li><b>17-313: Foundations of Software Engineering</b> <b>(A+)</b> - Learned software design
+                            principles,
+                            version control, and agile methodologies.</li>
+                        <li><b>67-443: Mobile Application Development</b> <b>(A+)</b> - Designed and developed mobile
+                            applications
+                            with a focus on UI/UX and robust backend integration.</li>
+                        <li><b>70-208: Regression Analysis</b> - Covered statistical methods for regression and their
+                            applications in data analysis.</li>
+                        <li><b>70-426: Capstone in Data Science</b> <b>(A+)</b> - Integrated advanced data science
+                            techniques to
+                            solve real-world problems in a project-based format.</li>
+                        <li><b>36-218: Probability Theory for Computer Science</b> - Introduced core probability
+                            concepts used in computer science and machine learning.</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>
+            Page design inspired by <a href="https://graphics.stanford.edu/~kayvonf/" target="_blank">Kayvon
+                Fatahalian</a>.
+        </p>
+    </div>
+</body>
+
+</html>
