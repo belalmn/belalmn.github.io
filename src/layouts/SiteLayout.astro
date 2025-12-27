@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+
+const { title = "Belal" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        <meta name="color-scheme" content="light dark" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <div class="layout">
+                <slot />
+            </div>
+            <footer
+                style="margin-top: 3rem; text-align: center; font-size: 0.8rem; color: var(--subtle);"
+            >
+                Design inspired by <a href="https://chiukenny.github.io/"
+                    >Kenny Chiu</a
+                >
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import ProfileHeader from "../../components/ProfileHeader.astro";
+import PostList from "../../components/PostList.astro";
+import { getCollection } from "astro:content";
+import { PROFILE, LINKS } from "../../consts";
+
+const links = [
+    LINKS.email,
+    LINKS.github,
+    LINKS.linkedin,
+    LINKS.resume,
+    LINKS.blog,
+    LINKS.projects,
+];
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<SiteLayout title="Blog">
+    <ProfileHeader
+        name={PROFILE.name}
+        tagline={PROFILE.tagline}
+        links={links}
+    />
+
+    <main>
+        <section class="section">
+            <h1 style="margin-bottom: 0.6rem;">Blog</h1>
+            <p class="meta">Notes on ML, systems, and research practice.</p>
+
+            <PostList posts={posts} />
+        </section>
+    </main>
+</SiteLayout>

@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import ProfileHeader from "../../components/ProfileHeader.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import { PROFILE, LINKS } from "../../consts";
+
+const links = [
+    LINKS.email,
+    LINKS.github,
+    LINKS.linkedin,
+    LINKS.resume,
+    LINKS.blog,
+    LINKS.projects,
+];
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog", ({ data }) => !data.draft);
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<SiteLayout title={post.data.title}>
+    <ProfileHeader
+        name={PROFILE.name}
+        tagline={PROFILE.tagline}
+        links={links}
+    />
+    <main>
+        <BlogPost post={post}>
+            <Content />
+        </BlogPost>
+    </main>
+</SiteLayout>

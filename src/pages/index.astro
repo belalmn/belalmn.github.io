@@ -1,0 +1,97 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import ProfileHeader from "../components/ProfileHeader.astro";
+import TimelineList from "../components/TimelineList.astro";
+import PostList from "../components/PostList.astro";
+import { getCollection } from "astro:content";
+import {
+    PROFILE,
+    LINKS,
+    EXPERIENCES,
+    TEACHING_SERVICE,
+    EDUCATION,
+} from "../consts";
+
+const links = [
+    LINKS.email,
+    LINKS.github,
+    LINKS.linkedin,
+    LINKS.resume,
+    LINKS.blog,
+    LINKS.projects,
+];
+
+// Recent posts
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 5);
+---
+
+<SiteLayout title={PROFILE.name}>
+    <ProfileHeader
+        name={PROFILE.name}
+        tagline={PROFILE.tagline}
+        links={links}
+    />
+
+    <main>
+        <section class="section">
+            <h1 style="margin-bottom: 0.6rem;">{PROFILE.name}</h1>
+            <p>
+                I am a computer science student at the <a
+                    href="https://www.ubc.ca/">University of British Columbia</a
+                >, where I am completing non-degree coursework after earning a
+                B.Sc. in Information Systems from <a
+                    href="https://www.qatar.cmu.edu/"
+                    >Carnegie Mellon University Qatar</a
+                >.
+            </p>
+            <p>
+                My background includes undergraduate teaching, industry
+                internships in data science and software engineering, and
+                current involvement in applied research and academic service at
+                UBC.
+            </p>
+            <p>
+                I am attracted to problems where learning, data, and systems
+                constraints meet, and I am looking to develop this focus through
+                research collaboration.
+            </p>
+            <p class="cta-box">
+                Actively searching for research opportunities in Vision and ML!
+                <br />
+                See <a href="/projects">projects</a>
+                and <a href="/blog">notes</a>.
+            </p>
+        </section>
+
+        <hr />
+
+        <section class="section">
+            <h2>Experience</h2>
+            <TimelineList items={EXPERIENCES} />
+        </section>
+
+        <section class="section">
+            <h2>Teaching & Service</h2>
+            <TimelineList items={TEACHING_SERVICE} />
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <TimelineList items={EDUCATION} />
+        </section>
+
+        <hr />
+
+        <section class="section">
+            <h2>Recent Posts</h2>
+            <div style="margin-top: 0.625rem;">
+                <PostList posts={posts} />
+                <div style="margin-top: 0.625rem;">
+                    <a href="/blog">All posts ⟶</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</SiteLayout>

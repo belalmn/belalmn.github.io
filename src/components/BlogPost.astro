@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+
+const fmt = new Intl.DateTimeFormat("en-CA", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+});
+---
+
+<a href="/blog">⟵ Blog</a>
+<h1 style="margin-top: 1rem; margin-bottom: 0.5rem;">
+    {post.data.title}
+</h1>
+<p class="meta">Published on {fmt.format(post.data.pubDate)}</p>
+<article class="prose">
+    <slot />
+</article>

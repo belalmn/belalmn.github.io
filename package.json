@@ -1,0 +1,16 @@
+{
+  "name": "belalmn.github.io",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@github/copilot-language-server": "^1.406.0",
+    "astro": "^5.16.6",
+    "katex": "^0.16.27"
+  }
+}

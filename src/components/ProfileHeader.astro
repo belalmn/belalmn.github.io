@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import defaultPortrait from "../assets/portrait.jpg";
+
+type Link = { label: string; href: string };
+
+const {
+    name,
+    tagline,
+    portraitSrc = defaultPortrait,
+    links = [],
+} = Astro.props as {
+    name: string;
+    tagline: string | string[];
+    portraitSrc?: any;
+    links?: Link[];
+};
+
+const taglines = Array.isArray(tagline) ? tagline : [tagline];
+// Fallback for the old path since we moved the file to src/assets
+const finalPortrait =
+    portraitSrc === "/images/portrait.jpg" ? defaultPortrait : portraitSrc;
+---
+
+<aside class="card profile-header">
+    <a href="/" class="profile-link">
+        <Image
+            src={finalPortrait}
+            alt={`${name} portrait`}
+            width={520}
+            loading="eager"
+            class="profile-image"
+        />
+        <div class="profile-info">
+            <div class="profile-name">
+                {name}
+            </div>
+        </div>
+    </a>
+    <div>
+        {taglines.map((t) => <div class="kicker profile-tagline">{t}</div>)}
+    </div>
+
+    {
+        links.length > 0 && (
+            <div class="badgeRow profile-links">
+                {links.map((l) => (
+                    <a class="pill" href={l.href}>
+                        {l.label}
+                    </a>
+                ))}
+            </div>
+        )
+    }
+</aside>
+
+<style>
+    .profile-header {
+        position: sticky;
+        top: 2rem;
+        text-align: center;
+    }
+
+    @media (max-width: 62.5rem) {
+        .profile-header {
+            position: static;
+        }
+    }
+
+    .profile-link {
+        display: block;
+        text-decoration: none;
+    }
+
+    .profile-image {
+        width: 100%;
+        max-width: var(--sidebar);
+        margin: 0 auto;
+        height: auto;
+        border-radius: 0.375rem;
+        display: block;
+    }
+
+    .profile-info {
+        margin-top: 0.875rem;
+    }
+
+    .profile-name {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text);
+    }
+
+    .profile-tagline {
+        margin-top: 0.25rem;
+    }
+
+    .profile-links {
+        margin-top: 0.875rem;
+        justify-content: center;
+    }
+</style>

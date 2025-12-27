@@ -1,0 +1,57 @@
+---
+interface Props {
+    items: {
+        title: string;
+        org: string;
+        orgUrl?: string;
+        when: string;
+        details?: string | string[];
+    }[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="list">
+    {
+        items.map((x) => (
+            <li>
+                <p>
+                    <strong style="color: var(--text);">{x.title}</strong>
+                    {" · "}
+                    <span class="meta">({x.when})</span>
+                    <br />
+                    <span class="meta" style="color: var(--text);">
+                        {x.orgUrl ? (
+                            <a
+                                href={x.orgUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {x.org}
+                            </a>
+                        ) : (
+                            x.org
+                        )}
+                    </span>
+                    <br />
+                    {x.details && (
+                        <span
+                            class="meta"
+                            style="margin-top: 0.25rem; display: block;"
+                        >
+                            {Array.isArray(x.details)
+                                ? x.details.map((d) => (
+                                      <span>
+                                          {d}
+                                          <br />
+                                      </span>
+                                  ))
+                                : x.details}
+                        </span>
+                    )}
+                </p>
+            </li>
+        ))
+    }
+</ul>
