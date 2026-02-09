@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import UmamiAnalytics from "../components/UmamiAnalytics.astro";
 
 const { title = "Belal" } = Astro.props;
 ---
@@ -7,6 +8,7 @@ const { title = "Belal" } = Astro.props;
 <!doctype html>
 <html lang="en">
     <head>
+        <UmamiAnalytics websiteId="8798f075-2d92-4a38-917b-30c53616676e" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
