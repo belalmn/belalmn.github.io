@@ -12,7 +12,7 @@ export const LINKS = {
   home: { label: "Home", href: "/" },
   blog: { label: "Blog", href: "/blog" },
 //   projects: { label: "Projects", href: "/projects" },
-  resume: { label: "Resume", href: "/resume.pdf" },
+//   resume: { label: "Resume", href: "/resume.pdf" },
   email: { label: "Email", href: "mailto:belal.mnur@gmail.com" },
   github: { label: "GitHub", href: "https://github.com/belalmn" },
   linkedin: { label: "LinkedIn", href: "https://www.linkedin.com/in/belalm/" },
