@@ -11,7 +11,7 @@ export const PROFILE = {
 export const LINKS = {
   home: { label: "Home", href: "/" },
   blog: { label: "Blog", href: "/blog" },
-  projects: { label: "Projects", href: "/projects" },
+//   projects: { label: "Projects", href: "/projects" },
   resume: { label: "Resume", href: "/resume.pdf" },
   email: { label: "Email", href: "mailto:belal.mnur@gmail.com" },
   github: { label: "GitHub", href: "https://github.com/belalmn" },
@@ -19,6 +19,14 @@ export const LINKS = {
 };
 
 export const EXPERIENCES = [
+  {
+    title: "Research Collaborator",
+    org: "UBC CS Computer Vision Lab (Supervised by Prof. Leonid Sigal)",
+    orgUrl: "https://www.cs.ubc.ca/~lsigal/",
+    when: "Jan '26 – Present",
+    details:
+      "Collaborating with the UBC Computer Vision Lab to explore self-supervised representation learning for vision, focusing on the JEPA family of architectures. Investigating novel pre-training strategies and their impact on downstream tasks, contributing to both theoretical insights and practical implementations.",
+  },
   {
     title: "Research Volunteer",
     org: "UBC Addictions & Concurrent Disorders Lab",
@@ -47,10 +55,18 @@ export const EXPERIENCES = [
 
 export const TEACHING_SERVICE = [
   {
+    title: "Vice President Academic",
+    org: "UBC CSSS – Computer Science Student Society",
+    orgUrl: "https://ubccsss.org/",
+    when: "May '26 – Present",
+    details:
+      "Overseeing academic initiatives and student support programs for the UBC Computer Science Student Society, including curriculum feedback, academic workshops, and mentorship programs. Collaborating with faculty and student groups to enhance the academic experience for undergraduate and graduate students in the computer science department.",
+  },
+  {
     title: "Conference Chair",
     org: "UBC CSSS – Computer Science Student Society",
     orgUrl: "https://ubccsss.org/",
-    when: "Aug '25 – Present",
+    when: "Aug '25 – Apr '26",
     details:
       "Leading planning and execution of the inaugural UBC Computer Science Student Research Conference, coordinating logistics, programming, and stakeholder engagement to create a platform showcasing undergraduate and graduate research.",
   },
@@ -80,6 +96,7 @@ export const EDUCATION = [
     when: "2024 – Present",
     details: [
       "Notable Coursework:",
+      "CPSC 532B: NLP Open Questions",
       "CPSC 440: Advanced Machine Learning",
       "CPSC 425: Computer Vision",
       "CPSC 406: Computational Optimization",
@@ -88,8 +105,8 @@ export const EDUCATION = [
   },
   {
     title: "B.S. Information Systems",
-    org: "Carnegie Mellon University Qatar",
-    orgUrl: "https://www.qatar.cmu.edu/",
+    org: "Carnegie Mellon University",
+    orgUrl: "https://www.cmu.edu/",
     when: "2020 – 2024",
     details: [
       "Notable Coursework:",

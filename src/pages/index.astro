@@ -18,7 +18,7 @@ const links = [
     LINKS.linkedin,
     LINKS.resume,
     LINKS.blog,
-    LINKS.projects,
+    // LINKS.projects,
 ];
 
 // Recent posts
@@ -40,28 +40,35 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
             <p>
                 I am a computer science student at the <a
                     href="https://www.ubc.ca/">University of British Columbia</a
-                >, where I am completing non-degree coursework after earning a
-                Bachelor of Science in Information Systems from <a
-                    href="https://www.qatar.cmu.edu/"
-                    >Carnegie Mellon University Qatar</a
-                >.
+                > and a research collaborator in the <a
+                    href="https://vision.cs.ubc.ca/"
+                    >Computer Vision lab</a
+                > under 
+                <a href="https://www.cs.ubc.ca/~sigal/">Professor Leonid Sigal</a>.
+
+                I hold a bachelor's degree in Information Systems from <a
+                    href="https://www.cmu.edu/"
+                    >Carnegie Mellon University</a
+                 >.
             </p>
             <p>
-                My background includes undergraduate teaching, industry
-                internships in data science and software engineering, and
-                current involvement in applied research and academic service at
-                UBC.
+                My research currently centers on self-supervised representation learning
+                for vision, working with the JEPA family of architectures to explore better
+                pre-training strategies.
             </p>
             <p>
-                I am attracted to problems where learning, data, and systems
-                constraints meet, and am looking to develop this focus through
-                research collaboration.
+                In past internships, I've explored generative and analytics-focused NLP workflows
+                for the banking and enterprise software sectors.
             </p>
-            <p class="cta-box">
-                Actively searching for research opportunities in Vision and ML!
-                <br />
-                See <a href="/projects">projects</a>
-                and <a href="/blog">notes</a>.
+            <p>
+                I devote a good chunk of my time serving the UBC Computer Science community as VP Academic of the
+                <a href="https://www.ubccsss.org/">UBC CSSS</a>,
+                organizing events like the <a href="https://ubccsss.org/cssrc/">UBC Computer Science Student Research
+                Conference</a>.
+            </p>
+            <p>
+                Check out <b><a href="https://www.cs.ubc.ca/news/2026/03/cssrc">this article</a></b> covering how
+                my team and I launched the inaugual conference in early 2026!
             </p>
         </section>
 
@@ -89,7 +96,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
             <div style="margin-top: 0.625rem;">
                 <PostList posts={posts} />
                 <div style="margin-top: 0.625rem;">
-                    <a href="/blog">All posts ⟶</a>
+                    <a href="/blog">All posts →</a>
                 </div>
             </div>
         </section>
